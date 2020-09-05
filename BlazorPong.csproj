@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazor.Extensions.Canvas" Version="1.1.0-preview1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.1" PrivateAssets="all" />
+    <PackageReference Include="System.Net.Http.Json" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="MainLayout.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="wwwroot\Index.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Counter.razor" />
+    <_ContentIncludedByDefault Remove="Pages\FetchData.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Index.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="wwwroot\Game\Ball.cs" />
+    <Compile Include="wwwroot\Game\Entity.cs" />
+    <Compile Include="wwwroot\Game\Game.cs" />
+  </ItemGroup>
+
+</Project>
